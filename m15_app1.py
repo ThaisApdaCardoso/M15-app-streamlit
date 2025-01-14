@@ -41,8 +41,6 @@ grafico_data = np.random.randn(50, 2)
 st.write("Gráfico gerado aleatoriamente:")
 st.line_chart(grafico_data)
 
-map_data = pd.DataFrame(
-     np.random.data(1000, 2) / [50, 50] + [37.76, -122.4],
-     columns=['lat', 'lon'])
-
+# Exemplo de mapa
+np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4]
 st.map(map_data)

@@ -22,11 +22,16 @@ st.write("Este é meu primeiro app criado com Streamlit Cloud!")
 
 # Um exemplo de DataFrame
 # Tabela interativa
-data = pd.DataFrame({
+# Dados iniciais com horários
+data = {
     'Nomes': ['Alice', 'Bob', 'Carlos', 'Diana'],
     'Idades': [25, 30, 35, 40],
-    'Pontuações': [90, 85, 78, 92]
-})
+    'Pontuações': [90, 85, 78, 92],
+    'Latitude': [37.7749, 34.0522, 40.7128, 51.5074],  # Coordenadas fictícias
+    'Longitude': [-122.4194, -118.2437, -74.0060, -0.1278],
+    'Horário': ['08:00', '09:30', '14:15', '16:45']  # Exemplos de horários
+}
+
 st.write("Aqui está uma tabela de exemplo:")
 st.dataframe(data)
 
@@ -41,6 +46,18 @@ grafico_data = np.random.randn(50, 2)
 st.write("Gráfico gerado aleatoriamente:")
 st.line_chart(grafico_data)
 
-# Exemplo de mapa
-np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4]
-st.map(map_data)
+# Criando um mapa com as coordenadas fictícias
+st.map(df[['Latitude', 'Longitude']])
+
+# Mostrando os dados na aplicação
+st.title("Mapa Interativo de Pessoas")
+st.write("Dados das pessoas com suas localizações:")
+st.dataframe(df)
+
+# Criando o mapa
+st.map(df[['Latitude', 'Longitude']])
+
+# Criando botões
+if st.button("Clique aqui!"):
+    st.write("Você clicou no botão!")
+

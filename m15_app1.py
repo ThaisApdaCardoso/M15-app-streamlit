@@ -14,9 +14,13 @@ import numpy as np
 # Título do App
 st.title("Meu Primeiro Projeto no Streamlit")
 
+# Boas-vindas
+st.write('Bem-vindos')
+
 # Descrição
 st.write("Este é meu primeiro app criado com Streamlit Cloud!")
 
+# Um exemplo de DataFrame
 # Tabela interativa
 data = pd.DataFrame({
     'Nomes': ['Alice', 'Bob', 'Carlos', 'Diana'],
@@ -36,3 +40,9 @@ st.dataframe(data[data['Idades'] >= idade_minima])
 grafico_data = np.random.randn(50, 2)
 st.write("Gráfico gerado aleatoriamente:")
 st.line_chart(grafico_data)
+
+map_data = pd.DataFrame(
+     np.random.data(1000, 2) / [50, 50] + [37.76, -122.4],
+     columns=['lat', 'lon'])
+
+st.map(map_data)

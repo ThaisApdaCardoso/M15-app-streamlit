@@ -80,7 +80,7 @@ st.write(f"Você escolheu: {opcoes}")
 # Exibir Código
 codigo = '''import streamlit as st
 import pandas as pd
-data = pd.read_csv('meu_arquivo.csv')
+data = pd.read_csv('input_M15_SINASC_RO_2019.csv')
 st.write(data)'''
 st.code(codigo, language='python')
 
